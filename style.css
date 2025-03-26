@@ -1,7 +1,7 @@
-/* General Styles */
+/* General Page Style */
 body {
-    font-family: Arial, sans-serif;
-    background: #0c1022;
+    font-family: "Arial", sans-serif;
+    background: linear-gradient(to right, #ffffff, #f2f6fc);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -11,7 +11,96 @@ body {
     position: relative;
 }
 
-/* Animated Background with Glowing Circuits */
+/* High-Tech Container */
+.container {
+    background: rgba(255, 255, 255, 0.8);
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0px 4px 20px rgba(0, 100, 255, 0.3);
+    text-align: center;
+    backdrop-filter: blur(15px);
+    transition: transform 0.3s ease-in-out;
+    border: 2px solid rgba(0, 100, 255, 0.2);
+}
+
+.container:hover {
+    transform: scale(1.02);
+    box-shadow: 0px 6px 25px rgba(0, 100, 255, 0.5);
+}
+
+/* Input Fields */
+input {
+    width: 90%;
+    padding: 12px;
+    margin: 12px 0;
+    border: 2px solid rgba(0, 100, 255, 0.3);
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.9);
+    color: #333;
+    font-size: 16px;
+    outline: none;
+    transition: border 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+input:focus {
+    border-color: rgba(0, 150, 255, 0.7);
+    box-shadow: 0px 0px 10px rgba(0, 150, 255, 0.5);
+}
+
+/* Buttons with Glow Effect */
+button {
+    width: 100%;
+    padding: 12px;
+    background: linear-gradient(90deg, #0099ff, #00ccff);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    box-shadow: 0px 0px 12px rgba(0, 150, 255, 0.6);
+    transition: all 0.3s ease-in-out;
+}
+
+button:hover {
+    background: linear-gradient(90deg, #ff6600, #ff00ff);
+    box-shadow: 0px 0px 20px rgba(255, 0, 255, 0.7);
+    transform: scale(1.05);
+}
+
+/* Floating Glowing Dots Animation */
+@keyframes floatingDots {
+    0% {
+        transform: translateY(0);
+        opacity: 0.8;
+    }
+    50% {
+        transform: translateY(-15px);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 0.8;
+    }
+}
+
+/* Floating Decorative Elements */
+.particle {
+    position: absolute;
+    width: 12px;
+    height: 12px;
+    background: rgba(0, 150, 255, 0.8);
+    border-radius: 50%;
+    box-shadow: 0px 0px 10px rgba(0, 150, 255, 0.6);
+    animation: floatingDots 3s infinite alternate;
+}
+
+/* Randomly Positioned Particles */
+.particle:nth-child(1) { top: 15%; left: 25%; animation-duration: 2.5s; }
+.particle:nth-child(2) { top: 35%; left: 70%; animation-duration: 3s; }
+.particle:nth-child(3) { top: 60%; left: 40%; animation-duration: 2.8s; }
+.particle:nth-child(4) { top: 80%; left: 20%; animation-duration: 3.2s; }
+
+/* High-Tech Circuit Background */
 body::before {
     content: "";
     position: absolute;
@@ -20,101 +109,8 @@ body::before {
     width: 100%;
     height: 100%;
     background: url('https://www.transparenttextures.com/patterns/circuit-board.png'); 
-    opacity: 0.1;
+    opacity: 0.05;
     z-index: -1;
 }
 
-.container {
-    background: rgba(255, 255, 255, 0.1);
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0px 0px 15px rgba(0, 255, 255, 0.6);
-    text-align: center;
-    backdrop-filter: blur(10px);
-    transition: transform 0.3s ease-in-out;
-}
-
-.container:hover {
-    transform: scale(1.02);
-}
-
-/* Input Fields */
-input {
-    width: 90%;
-    padding: 12px;
-    margin: 10px 0;
-    border: 1px solid rgba(255, 255, 255, 0.3);
-    border-radius: 5px;
-    background: rgba(255, 255, 255, 0.1);
-    color: #fff;
-    font-size: 16px;
-    outline: none;
-}
-
-input::placeholder {
-    color: rgba(255, 255, 255, 0.5);
-}
-
-/* Buttons with Glow Effect */
-button {
-    width: 100%;
-    padding: 12px;
-    background: linear-gradient(90deg, #00c6ff, #0072ff);
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-weight: bold;
-    box-shadow: 0px 0px 10px rgba(0, 255, 255, 0.6);
-    transition: all 0.3s ease-in-out;
-}
-
-button:hover {
-    background: linear-gradient(90deg, #ff00ff, #ff6600);
-    box-shadow: 0px 0px 20px rgba(255, 165, 0, 0.8);
-    transform: scale(1.05);
-}
-
-/* Glowing Circuit Animation */
-@keyframes circuitGlow {
-    0% {
-        box-shadow: 0px 0px 10px rgba(0, 255, 255, 0.6);
-    }
-    50% {
-        box-shadow: 0px 0px 20px rgba(255, 0, 255, 0.8);
-    }
-    100% {
-        box-shadow: 0px 0px 10px rgba(0, 255, 255, 0.6);
-    }
-}
-
-.container {
-    animation: circuitGlow 3s infinite alternate;
-}
-
-/* Floating Particles */
-@keyframes floatingParticles {
-    from {
-        transform: translateY(0);
-    }
-    to {
-        transform: translateY(-20px);
-    }
-}
-
-.particle {
-    position: absolute;
-    width: 10px;
-    height: 10px;
-    background: rgba(0, 255, 255, 0.8);
-    border-radius: 50%;
-    box-shadow: 0px 0px 10px rgba(0, 255, 255, 0.8);
-    animation: floatingParticles 2s infinite alternate;
-}
-
-/* Randomly Positioned Particles */
-.particle:nth-child(1) { top: 10%; left: 20%; animation-duration: 2s; }
-.particle:nth-child(2) { top: 40%; left: 80%; animation-duration: 3s; }
-.particle:nth-child(3) { top: 60%; left: 50%; animation-duration: 2.5s; }
-.particle:nth-child(4) { top: 80%; left: 30%; animation-duration: 3.2s; }
 
