@@ -3,33 +3,31 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Electronics Login</title>
+    <title>Login | Signup</title>
     <link rel="stylesheet" href="style.css">
-    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-auth.js"></script>
 </head>
 <body>
     <div class="container">
-        <h2>Electronics Login</h2>
-
         <div id="login-form">
-            <input type="email" id="email" placeholder="Enter Email">
-            <input type="password" id="password" placeholder="Enter Password">
+            <h2>Login</h2>
+            <input type="email" id="email" placeholder="Email">
+            <input type="password" id="password" placeholder="Password">
             <button onclick="login()">Login</button>
             <button onclick="googleLogin()">Login with Google</button>
-            <p>Don't have an account? <a href="#" onclick="showSignup()">Sign Up</a></p>
+            <p>Don't have an account? <a href="#" onclick="showSignup()">Sign up</a></p>
         </div>
 
-        <div id="signup-form" style="display:none;">
-            <input type="text" id="signup-name" placeholder="Enter Full Name">
-            <input type="email" id="signup-email" placeholder="Enter Email">
-            <input type="password" id="signup-password" placeholder="Enter Password">
+        <div id="signup-form" style="display: none;">
+            <h2>Sign Up</h2>
+            <input type="text" id="signup-name" placeholder="Full Name">
+            <input type="email" id="signup-email" placeholder="Email">
+            <input type="password" id="signup-password" placeholder="Password">
             <button onclick="signup()">Sign Up</button>
             <p>Already have an account? <a href="#" onclick="showLogin()">Login</a></p>
         </div>
     </div>
 
-    <script src="firebase.js"></script>
+    <script type="module" src="firebase.js"></script>
     <script src="script.js"></script>
 </body>
 </html>
